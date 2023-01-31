@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Clothing Store</title>
   </head>
   <body>
@@ -51,11 +58,45 @@
               <p>The Sale is on valid upto 5th Feb</p>
             </div>
           </div>
+          <div class="gallery boots">
+            <div class="tagline">
+              <h3>18% off on Boots</h3>
+              <p>The Sale is on valid upto 5th Feb</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Cart Item Wrapper -->
+      <section class="item--wrapper">
+        <h4 class="item--heading">Items on Sale</h4>
+        <div class="cart--wrapper">
+          <div class="cart--container">
+            <div class="cart--item">
+              <h5 class="title">Nike Red and Black Air Max</h5>
+              <img
+                src="./Sale-Items/nike-shoe-2.png"
+                alt="nike"
+                aria-hidden="true"
+              />
+              <div class="details--wrapper">
+                <div class="price--container">
+                  <div class="discount--price">$50</div>
+                  <div class="actual--price">$75</div>
+                  <div class="discount">33% off</div>
+                </div>
+                <div class="button--wrapper">
+                  <i id="remove--btn" class="fas fa-minus"></i>
+                  <span class="quantity">0</span>
+                  <i id="add--btn" class="fas fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+  <script src="gsapFunction.js"></script>
 </html>

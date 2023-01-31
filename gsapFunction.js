@@ -31,12 +31,3 @@ gsap.from(".gallery--heading", {
   duration: 3,
   ease: "none",
 });
-
-// gsap.utils.toArray(".gallery").forEach((gallery) => {
-//   ScrollTrigger.create({
-//     trigger: gallery,
-//     start: "top top",
-//     pin: true,
-//     pinSpacing: false,
-//   });
-// });
