@@ -1,30 +1,36 @@
 const cartContainer = document.querySelector(".cart--container");
 const clothesContainer = document.querySelector(".clothes--cart");
-console.log(clothesContainer);
+let basket = [];
 
 let generateItems = () => {
   return (cartContainer.innerHTML = itemData
     .slice(0, 6)
     .map((item) => {
       let { id, name, source, actualPrice, discountPrice } = item;
+      let search = basket.find((y) => y.id === id);
       return `
     <div class="cart--item shoe--item" id="cart--${id}">
-    <h5 class="title">${name}</h5>
-    <img src=${source} alt="">
-    <div class="details--wrapper">
+      <h5 class="title">${name}</h5>
+      <img src=${source} alt="">
+        <div class="details--wrapper">
 
-    <div class="price--container">
-    <div class="discount--price">$${discountPrice}</div>
-    <div class="actual--price">$${actualPrice}</div>
-<div class="discount">${generateDiscount(actualPrice, discountPrice)}</div>
-    </div>
+          <div class="price--container">
+            <div class="discount--price">$${discountPrice}</div>
+            <div class="actual--price">$${actualPrice}</div>
+            <div class="discount">${generateDiscount(
+              actualPrice,
+              discountPrice
+            )}</div>
+          </div>
 
-    <div class="button--wrapper">
-    <i id="remove--btn" class="fas fa-minus"></i>
-    <span class="quantity">0</span>
-    <i id="add--btn" class="fas fa-plus"></i>
-    </div>
-    </div>
+          <div class="button--wrapper">
+            <i id="remove--btn" onclick="decrement(${id})" class="fas fa-minus"></i>
+            <span id="${id}" class="quantity">${
+        search === undefined ? 0 : search.item
+      }</span>
+            <i id="add--btn" onclick="increment(${id})" class="fas fa-plus"></i>
+          </div>
+        </div>
     </div>
 
 `;
@@ -37,6 +43,7 @@ let generateClothItems = () => {
     .slice(6)
     .map((item) => {
       let { id, name, source, actualPrice, discountPrice } = item;
+      let search = basket.find((y) => y.id === id);
       return `
     <div class="cart--item clothes--item" id="cart--${id}">
     <h5 class="title">${name}</h5>
@@ -50,9 +57,11 @@ let generateClothItems = () => {
     </div>
 
     <div class="button--wrapper">
-    <i id="remove--btn" class="fas fa-minus"></i>
-    <span class="quantity">0</span>
-    <i id="add--btn" class="fas fa-plus"></i>
+    <i id="remove--btn" onclick="decrement(${id})" class="fas fa-minus"></i>
+    <span id="${id}" class="quantity">${
+        search === undefined ? 0 : search.item
+      }</span>
+    <i id="add--btn" onclick="increment(${id})" class="fas fa-plus"></i>
     </div>
     </div>
     </div>
@@ -66,6 +75,36 @@ let generateDiscount = (actualPrice, discountPrice) => {
   let discount = Math.floor((discountPrice * 100) / actualPrice);
   let actualDiscount = Math.floor(100 - discount);
   return actualDiscount + "%";
+};
+
+let increment = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+  if (search === undefined) {
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+  update(selectedItem.id);
+};
+
+let decrement = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  update(selectedItem.id);
+};
+
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  document.getElementById(id).innerText = search.item;
 };
 
 generateItems();
