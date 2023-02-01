@@ -40,7 +40,7 @@ nav {
   object-fit: cover;
 }
 
-nav > ul {
+nav>ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
@@ -48,13 +48,13 @@ nav > ul {
   padding-right: 1rem;
 }
 
-nav > ul > li {
+nav>ul>li {
   cursor: pointer;
   font-weight: 400;
   position: relative;
 }
 
-nav > ul > li::after {
+nav>ul>li::after {
   position: absolute;
   content: "";
   bottom: -2px;
@@ -65,7 +65,7 @@ nav > ul > li::after {
   transition: width 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-nav > ul > li:hover::after {
+nav>ul>li:hover::after {
   width: 100%;
 }
 
@@ -219,13 +219,13 @@ nav > ul > li:hover::after {
   transform: translateX(0);
 }
 
-.tagline > h3 {
+.tagline>h3 {
   font-family: var(--font-Hansief);
   font-size: calc(10px + 4vw);
   width: 10ch;
 }
 
-.tagline > p {
+.tagline>p {
   font-family: var(--font-Oswald);
   font-size: 1.1rem;
   color: #ccc;
@@ -294,7 +294,7 @@ nav > ul > li:hover::after {
   font-size: 1.2rem;
 }
 
-.cart--item > img {
+.cart--item>img {
   width: 75%;
   height: 75%;
   object-fit: contain;
@@ -321,17 +321,17 @@ nav > ul > li:hover::after {
   letter-spacing: 1px;
 }
 
-.price--container > .discount--price {
+.price--container>.discount--price {
   font-weight: 600;
 }
 
-.price--container > .actual--price {
+.price--container>.actual--price {
   color: #a5a1a1;
   font-weight: 500;
   text-decoration: line-through;
 }
 
-.price--container > .discount {
+.price--container>.discount {
   color: #630519;
   font-weight: 700;
 }
@@ -348,13 +348,26 @@ nav > ul > li:hover::after {
   font-family: var(--font-Oswald);
 }
 
-.button--wrapper > i:hover {
+.button--wrapper>i:hover {
   color: #7e7b7c;
+}
+
+.clothes--item {
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+}
+
+.clothes--item>img {
+  width: 60%;
+  height: 45%;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Hover Media Queries */
 @media (hover: hover) {
-  .girl--img > img {
+  .girl--img>img {
     cursor: pointer;
   }
 
@@ -388,7 +401,8 @@ nav > ul > li:hover::after {
     justify-content: start;
   }
 
-  .header--section .girl--img > img {
+  .header--section .girl--img>img {
+    min-width: 300px;
     width: 40%;
     height: 80%;
     margin: auto 0;
@@ -408,13 +422,13 @@ nav > ul > li:hover::after {
     padding: 3rem;
   }
 
-  .tagline > h3 {
+  .tagline>h3 {
     font-size: 5rem;
     width: 90%;
     max-width: 10ch;
   }
 
-  .tagline > p {
+  .tagline>p {
     font-size: 1.4rem;
   }
 
@@ -423,7 +437,9 @@ nav > ul > li:hover::after {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media Screen and (min-width: 1200px) {
+
   /* Cart Item Section */
   .cart--container {
     grid-template-columns: repeat(3, 1fr);
