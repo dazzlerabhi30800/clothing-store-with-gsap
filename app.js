@@ -1,7 +1,7 @@
 const cartContainer = document.querySelector(".cart--container");
 const clothesContainer = document.querySelector(".clothes--cart");
 const cartIcon = document.querySelector(".cart--logo");
-let basket = [];
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let generateItems = () => {
   return (cartContainer.innerHTML = itemData
@@ -90,6 +90,7 @@ let increment = (id) => {
     search.item += 1;
   }
   update(selectedItem.id);
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let decrement = (id) => {
@@ -101,6 +102,8 @@ let decrement = (id) => {
     search.item -= 1;
   }
   update(selectedItem.id);
+  basket = basket.filter((x) => x.item !== 0);
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let update = (id) => {
@@ -123,3 +126,4 @@ let updateCartIcon = () => {
 
 generateItems();
 generateClothItems();
+updateCartIcon();

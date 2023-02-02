@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
 
 :root {
   --font-Oswald: "Oswald", sans-serif;
   --font-Roboto: "Roboto Mono", sans-serif;
   --font-Redwing: "Redwing", sans-serif;
   --font-Hansief: "Hansief", sans-serif;
+  --font-Poppins: "Poppins", sans-serif;
 }
 
 * {
@@ -17,7 +19,6 @@
 body {
   position: relative;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   min-height: 100vh;
   height: auto;
   /* background: linear-gradient(180deg, #2d2b2b 0%, #2d2c2c 100%); */
@@ -280,7 +281,6 @@ nav>ul>li:hover::after {
   display: flex;
   padding: 8px 10px;
   flex-direction: column;
-  /* gap: 2rem; */
   justify-content: space-between;
   border-radius: 5px;
   color: #fff;
@@ -406,15 +406,16 @@ nav>ul>li:hover::after {
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .cart--icon>a {
   text-decoration: none;
   color: #1d1c1c;
+  cursor: default;
 }
 
-.cart--icon>a:hover {
+.cart--logo:hover a {
   color: #fff;
 }
 
@@ -435,7 +436,16 @@ nav>ul>li:hover::after {
   #remove--btn {
     cursor: pointer;
   }
+
+  .cart--logo .cart--icon {
+    cursor: pointer;
+  }
+
+  .cart--logo .cart--icon>a {
+    cursor: pointer;
+  }
 }
+
 
 @media Screen and (min-width: 950px) {
   .header--section {
