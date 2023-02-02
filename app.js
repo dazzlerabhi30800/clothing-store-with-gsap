@@ -1,5 +1,6 @@
 const cartContainer = document.querySelector(".cart--container");
 const clothesContainer = document.querySelector(".clothes--cart");
+const cartIcon = document.querySelector(".cart--logo");
 let basket = [];
 
 let generateItems = () => {
@@ -105,6 +106,19 @@ let decrement = (id) => {
 let update = (id) => {
   let search = basket.find((x) => x.id === id);
   document.getElementById(id).innerText = search.item;
+  updateCartIcon();
+};
+
+let updateCartIcon = () => {
+  let totalItem = basket.map((x) => x.item).reduce((a, b) => a + b, 0);
+  const cartAmount = document.querySelector(".cart--amount");
+  if (totalItem < 1 && totalItem === 0) {
+    cartIcon.classList.remove("show");
+    cartAmount.textContent = 0;
+  } else {
+    cartIcon.classList.add("show");
+    cartAmount.textContent = totalItem;
+  }
 };
 
 generateItems();

@@ -70,7 +70,7 @@ let itemData = [
     actualPrice: 485,
   },
   {
-    id: "qmlop",
+    id: "sfmzp",
     source: "./Sale-Items/clothes/clothes-5.png",
     name: "Occupy Mars Shirt T-shirt",
     discountPrice: 120,
