@@ -54,6 +54,7 @@ let increment = (id) => {
   localStorage.setItem("data", JSON.stringify(basket));
   generateCheckoutItems();
   totalAmount();
+  showClearBtn();
 };
 
 let decrement = (id) => {
@@ -68,6 +69,7 @@ let decrement = (id) => {
   localStorage.setItem("data", JSON.stringify(basket));
   generateCheckoutItems();
   totalAmount();
+  showClearBtn();
 };
 
 let update = (id) => {
@@ -92,6 +94,7 @@ let removeItem = (id) => {
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCheckoutItems();
   totalAmount();
+  showClearBtn();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -111,5 +114,23 @@ let totalAmount = () => {
   }
 };
 
+let clearBtn = document.querySelector(".clear--btn");
+let showClearBtn = () => {
+  if (basket.length !== 0) {
+    clearBtn.style.display = "block";
+  } else {
+    clearBtn.style.display = "none";
+  }
+};
+
+clearBtn.addEventListener("click", () => {
+  basket = [];
+  generateCheckoutItems();
+  totalAmount();
+  showClearBtn();
+  localStorage.setItem("data", JSON.stringify(basket));
+});
+
 generateCheckoutItems();
 totalAmount();
+showClearBtn();
