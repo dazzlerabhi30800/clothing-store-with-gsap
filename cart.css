@@ -42,6 +42,7 @@ main .totalAmount {
   width: 350px;
   border-radius: 5px;
   background: radial-gradient(circle, #eb5d5d, #fc3737);
+  border: 2px solid #ffffff33;
   box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.46);
   gap: 1.5rem;
 }

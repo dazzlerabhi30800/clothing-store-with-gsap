@@ -274,7 +274,7 @@ nav>ul>li:hover::after {
 .cart--container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2.5rem;
+  gap: 4rem;
   padding: 1rem;
   justify-content: center;
   place-content: center;
@@ -401,14 +401,14 @@ nav>ul>li:hover::after {
   right: -5px;
   background: #f01d7f;
   border-radius: 50%;
-  padding: 2px;
+  padding: 2px 4px;
   color: #fff;
-  width: 17px;
+  width: 18px;
   height: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-family: "Poppins", sans-serif;
 }
 
