@@ -137,7 +137,7 @@ clearBtn.addEventListener("click", () => {
 let cartFooter = document.querySelector(".cart--footer");
 
 let shiftFooter = () => {
-  if (basket.length >= 2) {
+  if (basket.length >= 3) {
     cartFooter.classList.remove("shift");
   } else {
     cartFooter.classList.add("shift");
