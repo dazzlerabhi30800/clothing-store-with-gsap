@@ -6,6 +6,9 @@
 
 body {
   min-height: 100vh;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
 }
 
 main {
@@ -132,9 +135,12 @@ main .totalAmount {
 }
 
 .cart--footer {
-  position: static;
   align-self: flex-end;
   width: 100%;
+}
+.cart--footer.shift {
+  position: fixed;
+  bottom: 0;
 }
 
 @media (hover: hover) {

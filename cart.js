@@ -75,6 +75,7 @@ let decrement = (id) => {
 let update = (id) => {
   let search = basket.find((x) => x.id === id);
   document.getElementById(id).innerText = search.item;
+  shiftFooter();
 };
 
 let updateCartIcon = () => {
@@ -95,6 +96,7 @@ let removeItem = (id) => {
   generateCheckoutItems();
   totalAmount();
   showClearBtn();
+  shiftFooter();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -128,9 +130,21 @@ clearBtn.addEventListener("click", () => {
   generateCheckoutItems();
   totalAmount();
   showClearBtn();
+  shiftFooter();
   localStorage.setItem("data", JSON.stringify(basket));
 });
+
+let cartFooter = document.querySelector(".cart--footer");
+
+let shiftFooter = () => {
+  if (basket.length >= 2) {
+    cartFooter.classList.remove("shift");
+  } else {
+    cartFooter.classList.add("shift");
+  }
+};
 
 generateCheckoutItems();
 totalAmount();
 showClearBtn();
+shiftFooter();
