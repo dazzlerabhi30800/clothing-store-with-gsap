@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 
 :root {
   --font-Oswald: "Oswald", sans-serif;
@@ -40,7 +40,7 @@ nav {
   object-fit: cover;
 }
 
-nav>ul {
+nav > ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
@@ -48,13 +48,13 @@ nav>ul {
   padding-right: 1rem;
 }
 
-nav>ul>li {
+nav > ul > li {
   cursor: pointer;
   font-weight: 400;
   position: relative;
 }
 
-nav>ul>li::after {
+nav > ul > li::after {
   position: absolute;
   content: "";
   bottom: -2px;
@@ -65,16 +65,16 @@ nav>ul>li::after {
   transition: width 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-nav>ul>li.active::after {
+nav > ul > li.active::after {
   width: 100%;
 }
 
-nav>ul>li>a {
+nav > ul > li > a {
   text-decoration: none;
   color: #fff;
 }
 
-nav>ul>li:hover::after {
+nav > ul > li:hover::after {
   width: 100%;
 }
 
@@ -226,13 +226,13 @@ nav>ul>li:hover::after {
   transform: translateX(0);
 }
 
-.tagline>h3 {
+.tagline > h3 {
   font-family: var(--font-Hansief);
   font-size: calc(10px + 4vw);
   width: 10ch;
 }
 
-.tagline>p {
+.tagline > p {
   font-family: var(--font-Oswald);
   font-size: 1.1rem;
   color: #ccc;
@@ -298,7 +298,7 @@ nav>ul>li:hover::after {
   font-size: 1.2rem;
 }
 
-.cart--item>img {
+.cart--item > img {
   width: 75%;
   height: 75%;
   object-fit: contain;
@@ -325,17 +325,17 @@ nav>ul>li:hover::after {
   letter-spacing: 1px;
 }
 
-.price--container>.discount--price {
+.price--container > .discount--price {
   font-weight: 600;
 }
 
-.price--container>.actual--price {
+.price--container > .actual--price {
   color: #a5a1a1;
   font-weight: 500;
   text-decoration: line-through;
 }
 
-.price--container>.discount {
+.price--container > .discount {
   color: #630519;
   font-weight: 700;
 }
@@ -352,19 +352,21 @@ nav>ul>li:hover::after {
   font-family: var(--font-Oswald);
 }
 
-.button--wrapper>i:hover {
+.button--wrapper > i:hover {
   color: #7e7b7c;
 }
 
 .clothes--item {
   background-color: #ff3cac;
-  background-image: linear-gradient(225deg,
-      #ff3cac 0%,
-      #b870f7 50%,
-      #f38d64 100%);
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #b870f7 50%,
+    #f38d64 100%
+  );
 }
 
-.clothes--item>img {
+.clothes--item > img {
   width: 60%;
   height: 45%;
   margin: 0 auto;
@@ -412,7 +414,7 @@ nav>ul>li:hover::after {
   font-family: "Poppins", sans-serif;
 }
 
-.cart--icon>a {
+.cart--icon > a {
   text-decoration: none;
   color: #1d1c1c;
   cursor: default;
@@ -422,10 +424,9 @@ nav>ul>li:hover::after {
   color: #fff;
 }
 
-.cart--icon>i {
+.cart--icon > i {
   font-size: 1.2rem;
 }
-
 
 footer {
   display: flex;
@@ -437,20 +438,20 @@ footer {
   margin-top: 5rem;
 }
 
-footer>img {
+footer > img {
   width: fit-content;
   height: 35px;
   object-fit: cover;
 }
 
-footer>ul {
+footer > ul {
   display: flex;
   list-style: none;
   gap: 1rem;
   align-items: center;
 }
 
-footer>ul>li>a {
+footer > ul > li > a {
   text-decoration: none;
   color: #242323;
   font-weight: 500;
@@ -465,7 +466,7 @@ footer .social--wrapper {
   align-items: center;
 }
 
-footer .social--wrapper>a {
+footer .social--wrapper > a {
   text-decoration: none;
   color: #242323;
   cursor: pointer;
@@ -480,7 +481,7 @@ footer .copyright {
 
 /* Hover Media Queries */
 @media (hover: hover) {
-  .girl--img>img {
+  .girl--img > img {
     cursor: pointer;
   }
 
@@ -496,29 +497,28 @@ footer .copyright {
     cursor: pointer;
   }
 
-  .cart--logo .cart--icon>a {
+  .cart--logo .cart--icon > a {
     cursor: pointer;
   }
 
   /* Footer */
-  footer>ul>li>a {
+  footer > ul > li > a {
     cursor: pointer;
   }
 
-  footer>ul>li>a:hover {
+  footer > ul > li > a:hover {
     color: #000000;
   }
 
-  .social--wrapper>a {
+  .social--wrapper > a {
     cursor: pointer;
-    transition: transform .3s linear;
+    transition: transform 0.3s linear;
   }
 
-  .social--wrapper>a:hover {
+  .social--wrapper > a:hover {
     transform: scale(1.3);
   }
 }
-
 
 @media Screen and (min-width: 950px) {
   .header--section {
@@ -541,7 +541,7 @@ footer .copyright {
     justify-content: start;
   }
 
-  .header--section .girl--img>img {
+  .header--section .girl--img > img {
     min-width: 300px;
     width: 40%;
     height: 80%;
@@ -562,13 +562,13 @@ footer .copyright {
     padding: 3rem;
   }
 
-  .tagline>h3 {
+  .tagline > h3 {
     font-size: 5rem;
     width: 90%;
     max-width: 10ch;
   }
 
-  .tagline>p {
+  .tagline > p {
     font-size: 1.4rem;
   }
 
@@ -576,11 +576,9 @@ footer .copyright {
   .cart--container {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media Screen and (min-width: 1200px) {
-
   /* Cart Item Section */
   .cart--container {
     grid-template-columns: repeat(3, 1fr);

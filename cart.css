@@ -1,9 +1,8 @@
 @import "./style.css";
 
 :root {
-  --img-width: 110px;
+  --img-width: 100px;
 }
-
 
 body {
   min-height: 100vh;
@@ -47,7 +46,7 @@ main .totalAmount {
   gap: 1.5rem;
 }
 
-.checkout--cart--item>img {
+.checkout--cart--item > img {
   width: var(--img-width);
   height: 110px;
   margin: auto 0;
@@ -73,13 +72,13 @@ main .totalAmount {
   flex-direction: column;
 }
 
-.info--container>.name--wrapper {
+.info--container > .name--wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.name--wrapper>span {
+.name--wrapper > span {
   background: #f88663;
   color: #000;
   font-weight: 500;
@@ -88,7 +87,7 @@ main .totalAmount {
   padding: 2px 4px;
 }
 
-.info--container>h5 {
+.info--container > h5 {
   font-size: 1rem;
   font-weight: 500;
   width: 17ch;
@@ -132,7 +131,6 @@ main .totalAmount {
   text-transform: uppercase;
 }
 
-
 .cart--footer {
   position: static;
   align-self: flex-end;
@@ -140,11 +138,11 @@ main .totalAmount {
 }
 
 @media (hover: hover) {
-  .info--container .name--wrapper>i {
+  .info--container .name--wrapper > i {
     cursor: pointer;
   }
 
-  .info--container .name--wrapper>i:hover {
+  .info--container .name--wrapper > i:hover {
     color: #080808;
   }
 
@@ -161,7 +159,6 @@ main .totalAmount {
   }
 }
 
-
 @media Screen and (max-width: 500px) {
   body {
     min-height: 100vh;
@@ -169,14 +166,14 @@ main .totalAmount {
   }
 
   .checkout--cart--wrapper {
-    gap: .3rem;
+    gap: 0.3rem;
     min-height: 100vh;
   }
 
   .checkout--cart--item {
     flex-direction: column;
     align-items: center;
-    gap: .7rem;
+    gap: 0.7rem;
     width: clamp(250px, 80%, 350px);
   }
 
@@ -191,21 +188,21 @@ main .totalAmount {
     text-align: center;
   }
 
-  .detail--container .info--container>h5 {
+  .detail--container .info--container > h5 {
     width: 20ch;
     margin: 0 auto;
   }
 
   .add--wrapper {
     margin: 0 auto;
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
 
   .detail--container .total--amount {
     margin: 0 auto;
   }
 
-  .checkout--cart--item>img {
+  .checkout--cart--item > img {
     order: 2;
     --img-width: 120px;
     margin: 0 auto;
